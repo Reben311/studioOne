@@ -19,7 +19,8 @@ export default async function handler(req, res) {
     // 2. Upload file to cloud storage
     // 3. Return the public URL
     
-    const fileUrl = `https://studio-one-demo.vercel.app/uploads/${Date.now()}-${Math.random().toString(36).substring(7)}.jpg`;
+    // Use a placeholder image service for demo
+    const fileUrl = `https://via.placeholder.com/1024x1280?text=Uploaded+Photo`;
     
     // Simulate processing delay
     await new Promise(resolve => setTimeout(resolve, 1000));

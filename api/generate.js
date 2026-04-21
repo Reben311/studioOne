@@ -41,8 +41,12 @@ export default async function handler(req, res) {
     const generatedImageUrl = result.data[0].url;
     */
 
-    // For demo purposes, simulate successful generation
-    const generatedImageUrl = `https://studio-one-demo.vercel.app/generated/${Date.now()}-${Math.random().toString(36).substring(7)}.jpg`;
+    // For demo purposes, use the first existing image (or a placeholder)
+    // In production, integrate with actual AI services
+    let generatedImageUrl = existing_image_urls[0]; // Use the uploaded image as demo
+    
+    // Alternatively, use a placeholder image service
+    // const generatedImageUrl = `https://via.placeholder.com/1024x1024?text=Generated+Photo`;
     
     res.status(200).json({ 
       url: generatedImageUrl,
